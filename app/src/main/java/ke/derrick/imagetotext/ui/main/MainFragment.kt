@@ -8,8 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.view.View.GONE
-import android.view.View.VISIBLE
+import android.view.View.*
 import android.widget.Toast
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -64,7 +63,10 @@ class MainFragment : Fragment() {
                 requireContext() as Activity, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
 
-        binding.imageCaptureBtn.setOnClickListener { takePhoto() }
+        binding.imageCaptureBtn.setOnClickListener {
+            takePhoto()
+            Toast.makeText(requireContext(), "please wait ...", Toast.LENGTH_LONG).show()
+        }
 
     }
 
@@ -150,8 +152,6 @@ class MainFragment : Fragment() {
             binding.imageCaptureBtn.visibility = GONE
             binding.imageGroup.visibility = VISIBLE
             binding.imageView.setImageBitmap(image!!.bitmapInternal)
-
-
         } else {
             binding.imageGroup.visibility = GONE
             binding.preview.visibility = VISIBLE
@@ -195,8 +195,8 @@ class MainFragment : Fragment() {
     @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.appbar, menu)
-        menu.findItem(R.id.refresh).isEnabled = false
-        menu.findItem(R.id.result).isEnabled = false
+        menu.findItem(R.id.refresh).isVisible = false
+        menu.findItem(R.id.result).isVisible = false
     }
 
     @Deprecated("Deprecated in Java")
@@ -220,12 +220,11 @@ class MainFragment : Fragment() {
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         if (isImageView) {
-            menu.findItem(R.id.refresh).isEnabled = true
-            menu.findItem(R.id.result).isEnabled = true
-
+            menu.findItem(R.id.refresh).isVisible = true
+            menu.findItem(R.id.result).isVisible = true
         } else {
-            menu.findItem(R.id.refresh).isEnabled = false
-            menu.findItem(R.id.result).isEnabled = false
+            menu.findItem(R.id.refresh).isVisible = false
+            menu.findItem(R.id.result).isVisible = false
         }
     }
 
