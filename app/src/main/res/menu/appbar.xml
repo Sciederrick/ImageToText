@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/result"
+        android:title="@string/text_result_menu_item"
+        android:icon="@drawable/ic_text_24dp"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/refresh"
+        android:title="@string/refresh_menu_item"
+        android:icon="@drawable/ic_refresh_24dp"
+        app:showAsAction="ifRoom|withText"/>
+</menu>

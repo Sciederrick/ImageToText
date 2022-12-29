@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ImageToText</string>
+    <string name="text_result_menu_item">txt</string>
+    <string name="refresh_menu_item">refresh</string>
+    <string name="text_result_fragment">txt</string>
+    <string name="hello_blank_fragment">Nothing to see</string>
+    <string name="camera_fab">take a photo</string>
+    <string name="select_image_for_text_recognition">receipt with shopping items and prices</string>
+    <string name="ocr_fab">switch to optical character recognition results</string>
+</resources>
